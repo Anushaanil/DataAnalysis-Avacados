@@ -1,0 +1,13 @@
+import pandas as pd
+movies={
+    "title": ("DIA","Love Mocktail"),
+    "Actors": ("Pruthvi","krishna"),
+    "year" : (2019,2020)
+}
+df = pd.DataFrame(movies)
+df.rename(columns={'year' : 'release_year'},inplace=True)
+#df.drop(columns="Actors",inplace=True)
+#df.copy()
+df= df[["title","release_year"]]
+ob=df.query("release_year==2020") #To filter out the things
+print(ob)
